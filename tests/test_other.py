@@ -557,8 +557,6 @@ f.close()
           print('    engine', engine)
           out = run_js('a.out.js', engine=engine, stderr=PIPE, full_output=True)
           self.assertContained('hello, world!', out)
-          if not wasm and engine == SPIDERMONKEY_ENGINE:
-            self.validate_asmjs(out)
         if not wasm and not self.is_wasm_backend():
           src = open('a.out.js').read()
           if opts == []:
